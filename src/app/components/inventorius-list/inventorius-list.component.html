@@ -1,0 +1,19 @@
+<h4>Inventoriaus sarasas</h4>
+<table border="1">
+  <tr>
+    <th>Inventorizacijos numeris</th>
+    <th>Inventoriaus pavadinimas</th>
+    <th>Inventoriaus kaina</th>
+    <th>Isigijimo data</th>
+
+  </tr>
+  <tr *ngFor="let data of invetorius">
+    <td>{{data.inNumber}}</td>
+    <td>{{data.name}}</td>
+    <td>{{data.price}}</td>
+    <td>{{data.date}}</td>
+    <td><button [routerLink]="['/update',data.id]">Redaguoti</button></td>
+    <td><button (click)="deleteInventor(data.id)">Istrinti</button></td>
+  </tr>
+
+</table>
